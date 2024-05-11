@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Topic{% endblock %}
+
+{% block content %}
+<h1>Select a Topic</h1>
+<ul>
+  {% for topic in topics %}
+  <li><a href="{% url 'ask_questions' topic.id %}">{{ topic.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

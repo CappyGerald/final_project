@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Answer Feedback{% endblock %}
+
+{% block content %}
+<h1>Answer Feedback</h1>
+<p>{{ message }}</p>
+<a href="{% url 'select_topic' %}">Select Another Topic</a>
+{% endblock %}

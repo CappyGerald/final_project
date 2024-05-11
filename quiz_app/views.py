@@ -4,7 +4,7 @@ from .models import Topic,  Question, Answer
 
 def select_topic(request):
     topics = opic.object.all()
-    return render(request, 'select_topic.htl', {'topics': topics})
+    return render(request, 'select_topic.html', {'topics': topics})
     
 def ask_questions(request, question_id):
     topic = Topic.objects.get(pk=topic_id)
