@@ -1,7 +1,7 @@
 import os
 import django
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'plp_final.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'final_project.settings')
 django.setup()
 
 from quiz_app.models import Topic, Question, Answer
@@ -105,12 +105,9 @@ for topic_data in topics_data:
         print(f"Created topic: {topic_obj}")
 
     for question_text, answer_text in zip(topic_data["questions"], topic_data["answers"]):
-        question_obj, created = Question.objects.get_or_create(topic=topic_obj, text=question_text)
-        if created:
-            print(f"Created question: {question_obj}")
+        question_obj = Question.objects.create(topic=topic_obj, text=question_text)
+        print(f"Created question: {question_obj}")
 
-        answer_obj, created = Answer.objects.get_or_create(question=question_obj, text=answer_text)
+        answer_obj, created = Answer.objects.get_or_create(question=question_obj, answer=answer_text)
         if created:
             print(f"Created answer: {answer_obj}")
-
-print("Data population complete.")
