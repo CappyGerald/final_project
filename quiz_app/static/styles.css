@@ -10,6 +10,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: purple
 }
 
 h1 {
@@ -47,12 +48,13 @@ input[type="text"] {
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
+    background-color: brown;
 }
 
 button {
     padding: 5px 10px;
     background-color: #007bff;
-    color: #fff;
+    color: darkred;
     border: none;
     cursor: pointer;
 }

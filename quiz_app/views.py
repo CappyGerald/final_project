@@ -1,38 +1,37 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Topic, Question, Answer
+
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Topic, Question, Choice, UserQuizAttempt
+from .forms import QuizForm
 
 def select_topic(request):
     topics = Topic.objects.all()
     return render(request, 'select_topic.html', {'topics': topics})
-    
+
+@login_required
 def ask_questions(request, topic_id):
     topic = get_object_or_404(Topic, pk=topic_id)
     questions = Question.objects.filter(topic=topic)
-    return render(request, 'ask_questions.html', {'questions': questions})
 
-def check_answer(request):
     if request.method == 'POST':
-        question_id = request.POST.get('question_id')
-        user_answer = request.POST.get('user_answer')
-        
-        # Checking if user_answer is empty or None
-        if not user_answer:
-            return render(request, 'answer_feedback.html', {'message': 'Please provide an answer.'})
-        
-        question = get_object_or_404(Question, pk=question_id)
-        all_answers = Answer.objects.filter(question=question)
-        
-        # Finding the correct answer from all_answers
-        correct_answer = next((ans for ans in all_answers if ans.is_correct), None)
-        print(f"Question ID: {question_id}")
-        print(f"User Answer: {user_answer}")
-        print(f"All Answers: {all_answers}")
-        print(f"Correct Answer: {correct_answer}")
+        form = QuizForm(request.POST, questions=questions)
+        if form.is_valid():
+            results = []
+            score = 0
+            for question in questions:
+                selected_choice_id = form.cleaned_data[f'question_{question.id}']
+                selected_choice = Choice.objects.get(id=selected_choice_id)
+                if selected_choice.is_correct:
+                    score += 1
+                    results.append((question, selected_choice, True, None))
+                else:
+                    correct_choice = question.choices.get(is_correct=True)
+                    results.append((question, selected_choice, False, correct_choice))
+            UserQuizAttempt.objects.create(user=request.user, topic=topic, score=score)
+            return render(request, 'quiz_result.html', {'questions': questions, 'results': results, 'score': score})
+    else:
+        form = QuizForm(questions=questions)
+    return render(request, 'ask_questions.html', {'form': form, 'topic': topic})
 
-        if correct_answer and user_answer.lower() == correct_answer.answer.lower():
-            message = 'Congratulations! Correct answer!'
-        else:
-            message = f'Incorrect! The correct answer is {correct_answer.answer if correct_answer else "unknown"}'
-
-        return render(request, 'answer_feedback.html', {'message': message})
-    return redirect('select_topic')
+def quiz_result(request):
+    return render(request, 'quiz_result.html')

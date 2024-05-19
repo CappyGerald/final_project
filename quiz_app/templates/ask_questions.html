@@ -1,19 +1,14 @@
+
 {% extends 'base.html' %}
 
-{% block title %}Ask Questions{% endblock %}
+{% block title %}Quiz{% endblock %}
 
 {% block content %}
-<h1>Quiz Questions</h1>
-{% for question in questions %}
-<div>
-  <h3>{{ question.text }}</h3>
-  <form method="POST" action="{% url 'check_answer' %}">
+<h2>Quiz: {{ topic.name }}</h2>
+<form method="post">
     {% csrf_token %}
-    <input type="hidden" name="question_id" value="{{ question.id }}">
-    <label for="user_answer">Your Answer:</label>
-    <input type="text" id="user_answer" name="user_answer">
-    <button type="submit">Submit Answer</button>
-  </form>
-</div>
-{% endfor %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
 {% endblock %}
+

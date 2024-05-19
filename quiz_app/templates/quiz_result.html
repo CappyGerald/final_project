@@ -1,0 +1,22 @@
+<!-- templates/quiz_result.html -->
+{% extends 'base.html' %}
+
+{% block title %}Quiz Result{% endblock %}
+
+{% block content %}
+<h2>Quiz Result</h2>
+<p>Your score is {{ score }} out of {{ questions.count }}</p>
+<ul>
+    {% for question, selected_choice, is_correct, correct_choice in results %}
+        <li>
+            <strong>{{ question.text }}</strong><br>
+            Your answer: {{ selected_choice.choice_text }}<br>
+            {% if is_correct %}
+                <span style="color:green;">Correct!</span>
+            {% else %}
+                <span style="color:red;">Incorrect! The correct answer is: {{ correct_choice.choice_text }}</span>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
