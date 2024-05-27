@@ -26,7 +26,7 @@ class Choice(models.Model):
         return self.choice_text
     
 class UserQuizAttempt(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     score = models.IntegerField()
     date_attempted = models.DateTimeField(auto_now_add=True)
