@@ -1,7 +1,7 @@
 
 # Django Quiz Application
 
-This is a Django-based quiz application that allows users to answer questions on various topics. The application supports multiple choice questions and tracks correct answers.
+This is a Django-based quiz application that allows users to answer questions on various topics. The application supports multiple choice questions and tracks correct answers. The application is aimed at enabling users enhance their general knowledge on various topics. 
 
 ## Setup and Installation
 
@@ -47,7 +47,7 @@ To populate the database with initial data (topics, questions, and choices), you
 
 1. **Script to populate the database:**
 
-    There is a script available to populate the database with predefined topics, questions, and choices. Save the script as `populate_db.py` and run it using the appropriate command.
+    There is a script available to populate the database with predefined topics, questions, and choices. Save the script as `populate.py` and run it using the appropriate command.
 
 ## Usage
 
