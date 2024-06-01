@@ -32,12 +32,12 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('answer', models.CharField(max_length=255)),
                 ('is_correct', models.BooleanField(default=False)),
-                ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='quiz_app.question')),
+                ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='QuizMaster.question')),
             ],
         ),
         migrations.AddField(
             model_name='question',
             name='topic',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='quiz_app.topic'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='QuizMaster.topic'),
         ),
     ]

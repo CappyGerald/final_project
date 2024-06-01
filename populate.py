@@ -4,7 +4,7 @@ import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'final_project.settings')
 django.setup()
 
-from quiz_app.models import Topic, Question, Choice
+from QuizMaster.models import Topic, Question, Choice
 
 # Define the topics, questions, answers, and choices
 topics_data = [

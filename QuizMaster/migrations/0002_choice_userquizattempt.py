@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quiz_app', '0001_initial'),
+        ('QuizMaster', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('choice_text', models.CharField(max_length=200)),
                 ('is_correct', models.BooleanField(default=False)),
-                ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='quiz_app.question')),
+                ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='QuizMaster.question')),
             ],
         ),
         migrations.CreateModel(
@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('score', models.IntegerField()),
                 ('date_attempted', models.DateTimeField(auto_now_add=True)),
-                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='quiz_app.topic')),
+                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='QuizMaster.topic')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

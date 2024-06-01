@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'quiz_app',
+    'QuizMaster',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'final_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'quiz_app', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'QuizMaster', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

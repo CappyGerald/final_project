@@ -17,12 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from quiz_app import views as quiz_view
+from QuizMaster import views as quiz_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('quiz/', include('quiz_app.urls')),
+    path('quiz/', include('QuizMaster.urls')),
     path('', quiz_view.select_topic, name='select_topic'), 
     path('topic/<int:topic_id>/', quiz_view.ask_questions, name='ask_questions'),
     

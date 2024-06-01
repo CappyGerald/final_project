@@ -7,14 +7,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quiz_app', '0002_choice_userquizattempt'),
+        ('QuizMaster', '0002_choice_userquizattempt'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='choice',
             name='question',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='choices', to='quiz_app.question'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='choices', to='QuizMaster.question'),
         ),
         migrations.AlterField(
             model_name='question',
@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='question',
             name='topic',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions', to='quiz_app.topic'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions', to='QuizMaster.topic'),
         ),
         migrations.DeleteModel(
             name='Answer',

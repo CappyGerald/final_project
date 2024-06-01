@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quiz_app', '0003_alter_choice_question_alter_question_text_and_more'),
+        ('QuizMaster', '0003_alter_choice_question_alter_question_text_and_more'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
