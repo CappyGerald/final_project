@@ -1,7 +1,7 @@
 
 # Django Quiz Application
 
-This is a Django-based quiz application that allows users to answer questions on various topics. The application supports multiple choice questions and tracks correct answers. The application is aimed at enabling users enhance their general knowledge on various topics. 
+This is a Django-based quiz application that allows users to answer questions on various topics. The application supports multiple choice questions and tracks correct answers. More features wil be added progressively. The application is aimed at enabling users enhance their general knowledge on various topics. 
 
 ## Setup and Installation
 
@@ -13,10 +13,10 @@ This is a Django-based quiz application that allows users to answer questions on
 
 ### Installation Steps
 
-1. **Clone the repository:**
+1. **Clone the repository:**ry o
 
     Clone the repository from GitHub to your local machine.
-
+6 
 2. **Create a virtual environment:**
 
     Create and activate a virtual environment to manage dependencies.
