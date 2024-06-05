@@ -1,9 +1,10 @@
 
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Select Topic{% endblock %}
 
 {% block content %}
+<link href="styleshett" type="text/css" href="{% static 'styles.css '%}" >
 <h2>Select a Topic</h2>
 <ul>
     {% for topic in topics %}

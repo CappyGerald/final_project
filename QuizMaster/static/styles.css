@@ -4,18 +4,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: goldenrod
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: darkkhaki
+    background-color: darkgrey
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main {
+    background-color: wheat
+    padding: 20px;
+    border-radius: 8px;
 }
 
 h1 {
-    color: #333;
-    background-color: darkorchid;
+    color: #FFFFFF; /* White */
+    background-color: darkorange
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
 }
 
 ul {
@@ -25,10 +37,13 @@ ul {
 
 li {
     margin-bottom: 10px;
+    padding: 10px;
+    background-color: skyblue
+    border-radius: 4px;
 }
 
 a {
-    color: #007bff;
+    color: yellowgreen
     text-decoration: none;
 }
 
@@ -37,29 +52,46 @@ a:hover {
 }
 
 form {
-    margin-top: 10px;
+    margin-top: 20px;
+    background-color: goldenrod
+    padding: 20px;
+    border-radius: 8px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    color: indigo
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: brown;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF; /* White */
+    border: 1px solid indigo
+    border-radius: 4px;
 }
 
 button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: darkred;
+    padding: 10px 20px;
+    background-color: indigo
+    color: #FFFFFF; /* White */
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: white
+}
+
+/* New styles for the logo image */
+.logo {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

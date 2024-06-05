@@ -4,11 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Quiz App{% endblock %}</title>
+    <img src="{% static 'logo.jpg' %}" alt="logo" class="logo">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>{% block title %}QuizMaster{% endblock %}</title>
 </head>
 <body>
     <header>
-        <h1>Quiz App</h1>
+        <h1>QuizMaster</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'select_topic' %}">Home</a></li>

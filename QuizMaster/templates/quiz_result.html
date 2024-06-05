@@ -1,11 +1,12 @@
-<!-- templates/quiz_result.html -->
-{% extends 'base.html' %}
 
+{% extends 'base.html' %}
+{% load static %}
 {% block title %}Quiz Result{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href = "{% static 'styles.css' %}">"
 <h2>Quiz Result</h2>
-<p>Your score is {{ score }} out of {{ questions.count }}</p>
+<p><b>Your score is {{ score }} out of {{ questions.count }}</b></p>
 <ul>
     {% for question, selected_choice, is_correct, correct_choice in results %}
         <li>
